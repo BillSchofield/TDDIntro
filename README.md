@@ -523,7 +523,7 @@ public class StringJoiner {
             List<String> remainingStrings = 
                 strings.subList(1, strings.size());
             return firstString +           
-                   concatenateWithDelimiter(otherStrings);
+                   concatenateWithDelimiter(remainingStrings);
         }
         return "";
     }
