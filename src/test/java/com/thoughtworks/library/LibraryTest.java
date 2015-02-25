@@ -103,7 +103,18 @@ public class LibraryTest {
 
     @Test
     public void shouldDisplayFormattedTimeWhenItIsAnEmptyString() {
+        List<String> books = new ArrayList<>();
+        PrintStream printStream = mock(PrintStream.class);
+        DateTime time = new DateTime();
+        DateTimeFormatter dateTimeFormatter = mock(DateTimeFormatter.class);
 
-        // implement me
+        when(dateTimeFormatter.print(time)).thenReturn("");
+
+        Library library = new Library(books, printStream, dateTimeFormatter);
+
+        library.welcome(time);
+
+        verify(printStream).println("Welcome to the library! The current time is ");
+
     }
 }
