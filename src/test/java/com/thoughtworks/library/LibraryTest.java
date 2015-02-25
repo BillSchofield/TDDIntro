@@ -98,7 +98,7 @@ public class LibraryTest {
 
         library.welcome(time);
 
-        // add a verify here
+        verify(printStream).println("Welcome to the library! The current time is FormattedTimeString");
     }
 
     @Test
