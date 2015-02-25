@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Matchers.contains;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class LibraryTest {
 
@@ -35,18 +33,32 @@ public class LibraryTest {
         library.listBooks();
 
         // add a verify statement here that shows that the book title was printed by to the printStream
+        verify(printStream).println("Book Title");
     }
 
     @Test
     public void shouldPrintNothingWhenThereAreNoBooks() {
-
-        // implement me
+        List<String> books = new ArrayList<>();
+        PrintStream printStream = mock(PrintStream.class);
+        Library library = new Library(books, printStream, null);
+        library.listBooks();
+        verifyZeroInteractions(printStream);
     }
 
     @Test
     public void shouldPrintBothBookTitlesWhenThereAreTwoBooks() {
+        List<String> books = new ArrayList<>();
+        String book1 = "Book 1";
+        String book2 = "Book 2";
+        books.add(book1);
+        books.add(book2);
+        PrintStream printStream = mock(PrintStream.class);
+        Library library = new Library(books, printStream, null);
 
-        // implement me
+        library.listBooks();
+
+        verify(printStream).println("Book 1");
+        verify(printStream).println("Book 2");
     }
 
     /*
@@ -86,12 +98,23 @@ public class LibraryTest {
 
         library.welcome(time);
 
-        // add a verify here
+        verify(printStream).println("Welcome to the library! The current time is FormattedTimeString");
     }
 
     @Test
     public void shouldDisplayFormattedTimeWhenItIsAnEmptyString() {
+        List<String> books = new ArrayList<>();
+        PrintStream printStream = mock(PrintStream.class);
+        DateTime time = new DateTime();
+        DateTimeFormatter dateTimeFormatter = mock(DateTimeFormatter.class);
 
-        // implement me
+        when(dateTimeFormatter.print(time)).thenReturn("");
+
+        Library library = new Library(books, printStream, dateTimeFormatter);
+
+        library.welcome(time);
+
+        verify(printStream).println("Welcome to the library! The current time is ");
+
     }
 }

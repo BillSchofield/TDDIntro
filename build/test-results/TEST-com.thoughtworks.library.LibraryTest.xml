@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.thoughtworks.library.LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-02-25T20:11:04" hostname="sebastian-radloffs-macbook.local" time="0.24">
+  <properties/>
+  <testcase name="shouldDisplayFormattedTimeWhenItIsAnEmptyString" classname="com.thoughtworks.library.LibraryTest" time="0.24"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
