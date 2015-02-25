@@ -16,7 +16,10 @@ public class Account {
     }
 
     public void withdrawMoney(double money){
-        this.balance -= money;
+        double tempBalance = this.balance;
+        if (!((tempBalance -= money) < 0)){
+            this.balance = tempBalance;
+        }
     }
 
     public double getBalance(){
