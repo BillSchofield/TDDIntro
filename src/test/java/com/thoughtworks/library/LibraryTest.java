@@ -40,8 +40,11 @@ public class LibraryTest {
 
     @Test
     public void shouldPrintNothingWhenThereAreNoBooks() {
-
-        // implement me
+        List<String> books = new ArrayList<>();
+        PrintStream printStream = mock(PrintStream.class);
+        Library library = new Library(books, printStream, null);
+        library.listBooks();
+        verify(printStream).println("Book Title");
     }
 
     @Test
