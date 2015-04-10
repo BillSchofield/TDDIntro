@@ -10,11 +10,9 @@ public class Account {
         balance = initialBalance;
     }
 
-    public void deposit(double depositAmount) {
-        balance += depositAmount;
+    public double deposit(double depositAmount) {
+        return balance += depositAmount;
     }
 
-    public double getBalance() {
-        return balance;
-    }
+
 }
