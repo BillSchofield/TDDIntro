@@ -17,31 +17,28 @@ import static org.junit.Assert.assertThat;
 
 public class FactorialTests {
 
-    private final Factorial factorial = new Factorial();
-
     @Test // Make me pass first
     public void shouldReturnOneWhenNumberIsOne(){
-
-        assertThat(new Factorial().compute(1), is(1));
+        assertThat(Factorial.compute(1), is(1));
     }
 
     @Test
     public void shouldReturnTwoWhenNumberIsTwo(){
-        assertThat(factorial.compute(2), is(2));
+        assertThat(Factorial.compute(2), is(2));
     }
 
     @Test
     public void shouldReturnOneWhenNumberIsZero(){
-        assertThat(factorial.compute(0), is(1));
+        assertThat(Factorial.compute(0), is(1));
     }
 
     @Test
     public void shouldReturnSixWhenNumberIsThree(){
-        assertThat(factorial.compute(3), is(6));
+        assertThat(Factorial.compute(3), is(6));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowIllegalArgumentExceptionWhenNumberIsNegative(){
-        factorial.compute(-1);
+        Factorial.compute(-1);
     }
 }
