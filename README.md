@@ -190,9 +190,9 @@ If you have a good idea of the behavior you want to test then you should just do
 
 2. Write the test in whatever way makes sense to you
 
-If you don’t have a good sense of what your test to look like when you start writing it, try using this process:
+If you don’t have a good sense of what your test should look like when you start writing it, try using this process:
 
-1. Write an empty test with an meaningless name
+1. Write an empty test with a meaningless name
 
 2. Create an instance of the class you want to test
 
@@ -251,7 +251,7 @@ public class StringJoinerTests {
 }
 ```
 
-Now the **`join`** method doesn't exist. Create it yourself of use your IDE to create it for you.
+Now the **`join`** method doesn't exist. Create it yourself or use your IDE to create it for you.
 
 > In IntelliJ **`join`** will be red because it’s not implemented. Click on the method name, hit Alt-Enter, and choose
 > **`Create Method ’join’`**.
@@ -368,7 +368,7 @@ We’ll move a little faster now.
 
 This is a much more interesting test than the first one. There’s a lot going on in the Arrange section, although most
 of it is just adding a string to the list. Other than the change to how we arrange the objects this test is mostly the 
-same as the first one. The test fails as expect and this is a simple way to make it pass.
+same as the first one. The test fails as expected and this is a simple way to make it pass.
 
 ``` java
 public class StringJoiner {
