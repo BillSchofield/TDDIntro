@@ -1,8 +1,14 @@
 package com.thoughtworks.tddintro.exercises.tictactoe;
 
+import java.io.PrintStream;
+
 public class Main {
     public static void main(String[] args) {
-        Board board = new Board(System.out);
+        PrintStream printStream = System.out;
+        Board board = new Board(printStream);
+        Player player = new Player(printStream, board);
         board.draw();
+        player.move();
+
     }
 }

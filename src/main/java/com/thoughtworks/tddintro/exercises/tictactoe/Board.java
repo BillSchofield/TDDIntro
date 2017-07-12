@@ -18,4 +18,8 @@ public class Board {
                 "7|8|9"
         );
     }
+
+    public void mark(int cell) {
+
+    }
 }
