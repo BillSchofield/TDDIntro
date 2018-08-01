@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 import static org.mockito.Matchers.contains;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class PlayerTest {
 
@@ -24,22 +22,33 @@ public class PlayerTest {
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
         board = mock(Board.class);
-        player = new Player(printStream, board);
+        player = new Player(printStream, bufferedReader, board);
     }
 
     @Test
-    public void shouldPromptPlayerWhenMoving() {
+    public void shouldPromptPlayerWhenMoving() throws IOException {
+        when(bufferedReader.readLine()).thenReturn("-1");
+
         player.move();
 
         verify(printStream).println(contains("make a move"));
     }
 
     @Test
-    public void shouldMarkBoardWhereUserChooses() throws IOException {
+    public void shouldMarkBoardWhereUserChoosesOne() throws IOException {
         when(bufferedReader.readLine()).thenReturn("1");
 
         player.move();
 
         verify(board).mark(1);
+    }
+
+    @Test
+    public void shouldMarkBoardWhereUserChoosesFive() throws IOException {
+        when(bufferedReader.readLine()).thenReturn("5");
+
+        player.move();
+
+        verify(board).mark(5);
     }
 }
