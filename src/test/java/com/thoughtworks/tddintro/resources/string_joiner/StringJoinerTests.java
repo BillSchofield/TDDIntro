@@ -7,17 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.CombinableMatcher.both;
 import static org.hamcrest.core.StringContains.containsString;
-import static org.junit.Assert.assertThat;
 
 public class StringJoinerTests {
     private List<String> strings;
     private StringJoiner joiner;
 
     @Before
-    public void setUp() throws Exception {
-        strings = new ArrayList<String>();
+    public void setUp() {
+        strings = new ArrayList<>();
         joiner = new StringJoiner("SomeDelimiter");
     }
 

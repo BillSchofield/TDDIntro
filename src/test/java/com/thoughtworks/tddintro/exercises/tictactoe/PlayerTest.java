@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import static org.mockito.Matchers.contains;
+import static org.mockito.ArgumentMatchers.contains;
 import static org.mockito.Mockito.*;
 
 public class PlayerTest {
@@ -18,7 +18,7 @@ public class PlayerTest {
     private BufferedReader bufferedReader;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
         board = mock(Board.class);

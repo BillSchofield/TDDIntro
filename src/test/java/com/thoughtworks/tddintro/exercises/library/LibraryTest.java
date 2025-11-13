@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -23,7 +23,7 @@ public class LibraryTest {
     private BufferedReader bufferedReader;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         books = new ArrayList<>();
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
@@ -50,7 +50,7 @@ public class LibraryTest {
 
     @Test
     @Ignore // Remove each @Ignore and implement test
-    public void shouldPrintBothBookTitlesWhenThereAreTwoBooks() throws IOException {
+    public void shouldPrintBothBookTitlesWhenThereAreTwoBooks() {
         // implement me
     }
 
@@ -63,7 +63,7 @@ public class LibraryTest {
 
     @Test
     @Ignore // Remove each @Ignore and implement test
-    public void shouldDeleteBookFromCollectionWhenRemovedByUser() throws IOException {
+    public void shouldDeleteBookFromCollectionWhenRemovedByUser() {
         // Add when/thenReturn here
 
         books.add("The Two Towers");
