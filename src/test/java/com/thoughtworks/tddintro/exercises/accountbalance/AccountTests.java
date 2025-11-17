@@ -1,23 +1,24 @@
 package com.thoughtworks.tddintro.exercises.accountbalance;
 
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class AccountTests {
     @Test
-    @Ignore  // Remove each @Ignore and implement test
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldIncreaseMyBalanceWhenIDepositMoney(){
         Account account = new Account();
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
 
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
 
     }

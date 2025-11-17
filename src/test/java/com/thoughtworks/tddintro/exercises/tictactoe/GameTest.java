@@ -1,7 +1,8 @@
 package com.thoughtworks.tddintro.exercises.tictactoe;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -12,7 +13,7 @@ public class GameTest {
     private Game game;
     private Board board;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         player = mock(Player.class);
         board = mock(Board.class);

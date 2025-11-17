@@ -1,6 +1,7 @@
 package com.thoughtworks.tddintro.resources.demeter;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 

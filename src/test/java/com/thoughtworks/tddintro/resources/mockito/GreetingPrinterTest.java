@@ -1,7 +1,7 @@
 package com.thoughtworks.tddintro.resources.mockito;
 
 import com.thoughtworks.tddintro.resources.test_double.GreetingPrinter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.PrintStream;
 

@@ -1,7 +1,7 @@
 package com.thoughtworks.tddintro.exercises.tictactoe;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class PlayerTest {
     private Board board;
     private BufferedReader bufferedReader;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);

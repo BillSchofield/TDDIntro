@@ -1,4 +1,7 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'info.solidsoft.pitest' version '1.15.0'
+}
 
 version = '1.0'
 
@@ -7,9 +10,31 @@ repositories {
 }
 dependencies {
     testImplementation("org.mockito:mockito-core:5.19.0")
-    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.13.4")
+    testImplementation("org.assertj:assertj-core:3.27.6")
+    pitest 'org.pitest:pitest-junit5-plugin:1.2.1'
 }
 
-test {
-    useJUnit()
+pitest {
+    targetClasses = ['com.thoughtworks.tddintro.*']
+    targetTests   = ['com.thoughtworks.tddintro.*']
+    useClasspathFile = true
+
+    testPlugin = 'junit5'
+    junit5PluginVersion = '1.2.1'
+    outputFormats = ['HTML', 'XML', 'CSV']
+
+    threads = 4
+    failWhenNoMutations = false
+    mutationThreshold = 0
+}
+
+tasks.named("pitest") { mustRunAfter(tasks.named("test")) }
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.register("verifyAll") {
+    dependsOn("test", "pitest")
 }

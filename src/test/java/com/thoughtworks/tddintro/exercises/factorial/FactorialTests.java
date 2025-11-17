@@ -1,10 +1,4 @@
 package com.thoughtworks.tddintro.exercises.factorial;
-import org.junit.Ignore;
-import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-
 /*
 
     * Change Factorial.compute() so that the first test passes and the remaining tests fail.
@@ -14,37 +8,45 @@ import static org.hamcrest.core.Is.is;
 
  */
 
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class FactorialTests {
 
     private final Factorial factorial = new Factorial();
 
     @Test // Make me pass first
-    @Ignore // Remove each @Ignore to allow the test to run
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldReturnOneWhenNumberIsOne(){
-        assertThat(new Factorial().compute(1), is(1));
+        assertThat(new Factorial().compute(1)).isEqualTo(1);
     }
 
     @Test
-    @Ignore // Remove each @Ignore to allow the test to run
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldReturnTwoWhenNumberIsTwo(){
-        assertThat(factorial.compute(2), is(2));
+        assertThat(factorial.compute(2)).isEqualTo(2);
     }
 
     @Test
-    @Ignore // Remove each @Ignore to allow the test to run
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldReturnOneWhenNumberIsZero(){
-        assertThat(factorial.compute(0), is(1));
+        assertThat(factorial.compute(0)).isEqualTo(1);
     }
 
     @Test
-    @Ignore // Remove each @Ignore to allow the test to run
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldReturnSixWhenNumberIsThree(){
-        assertThat(factorial.compute(3), is(6));
+        assertThat(factorial.compute(3)).isEqualTo(6);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    @Ignore // Remove each @Ignore to allow the test to run
+    @Test
+    @Disabled // Remove each @Disabled to allow the test to run
     public void shouldThrowIllegalArgumentExceptionWhenNumberIsNegative(){
-        factorial.compute(-1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            factorial.compute(-1);
+        });
     }
 }
